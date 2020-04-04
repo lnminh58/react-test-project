@@ -1,6 +1,7 @@
 import { createStore, applyMiddleware } from 'redux';
 import { persistStore, persistCombineReducers } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import { createWhitelistFilter } from 'redux-persist-transform-filter';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import createSagaMiddleware from 'redux-saga';
 
@@ -11,6 +12,8 @@ const rootPersistConfig = {
   key: 'root',
   storage,
   debug: true,
+  whitelist: ['schedule'],
+  transforms: [createWhitelistFilter('schedule', ['schedule.result'])],
 };
 
 const sagaMiddleware = createSagaMiddleware();

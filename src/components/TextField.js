@@ -1,27 +1,22 @@
 import React from 'react';
-import { InputGroup, FormControl } from 'react-bootstrap';
 import { useField } from 'formik';
+
+import FormControl from '@material-ui/core/FormControl';
+import Input from '@material-ui/core/Input';
+import InputLabel from '@material-ui/core/InputLabel';
+import FormHelperText from '@material-ui/core/FormHelperText';
 
 const TextField = ({ label, onValueChange, ...props }) => {
   const [field, meta] = useField(props);
 
   return (
-    <div className="mb-3">
-      <InputGroup>
-        <InputGroup.Prepend>
-          <InputGroup.Text>{label}</InputGroup.Text>
-        </InputGroup.Prepend>
-        <FormControl
-          {...field}
-          {...props}
-          onChange={val => {
-            if (onValueChange) onValueChange(val);
-            field.onChange(val);
-          }}
-        />
-      </InputGroup>
-      {meta.touched && meta.error ? <span className="text-danger small">{meta.error}</span> : null}
-    </div>
+    <>
+      <FormControl fullWidth margin="normal" error={meta.touched && meta.error}>
+        <InputLabel>{label}</InputLabel>
+        <Input fullWidth {...field} {...props} />
+        <FormHelperText>{meta.error}</FormHelperText>
+      </FormControl>
+    </>
   );
 };
 

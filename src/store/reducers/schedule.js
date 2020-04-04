@@ -31,7 +31,7 @@ export default function (state = initialState, action) {
         schedule: {
           ...state.schedule,
           requesting: false,
-          status: '',
+          status: 'success',
           result: action.payload,
         },
       };
@@ -42,7 +42,7 @@ export default function (state = initialState, action) {
         schedule: {
           ...state.schedule,
           requesting: false,
-          status: '',
+          status: 'error',
           error: action.payload,
         },
       };

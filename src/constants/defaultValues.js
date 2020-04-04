@@ -34,3 +34,5 @@ export const INIT_VALUES = DAY_OF_WEEK.map(day => ({
   startTime: '00:00',
   endTime: '00:00',
 }));
+
+export const TIME_FORMAT = 'HH:mm';
