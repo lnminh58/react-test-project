@@ -1,0 +1,19 @@
+@import "~bootstrap/scss/bootstrap";
+
+$primary: #007bff;
+$danger-trans: #d9534f;
+$white: #FFFFFF;
+
+.table-col {
+  min-width: 150px;
+}
+
+.td-selected {
+  border-bottom: 2px solid $primary !important;
+}
+
+.td-error {
+  background: $danger-trans;
+  color: $white;
+}
+
