@@ -30,7 +30,7 @@ export const DAY_OF_WEEK = [
 ];
 
 export const INIT_VALUES = DAY_OF_WEEK.map(day => ({
-  id: day.id,
+  ...day,
   startTime: '00:00',
-  endTime: '00:00'
-}))
+  endTime: '00:00',
+}));
