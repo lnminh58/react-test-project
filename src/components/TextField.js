@@ -11,7 +11,7 @@ const TextField = ({ label, onValueChange, ...props }) => {
 
   return (
     <>
-      <FormControl fullWidth margin="normal" error={meta.touched && meta.error}>
+      <FormControl fullWidth margin="normal" error={!!(meta.touched && meta.error)}>
         <InputLabel>{label}</InputLabel>
         <Input fullWidth {...field} {...props} />
         <FormHelperText>{meta.error}</FormHelperText>

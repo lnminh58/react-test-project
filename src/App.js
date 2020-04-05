@@ -72,7 +72,7 @@ const App = ({ rSchedule }) => {
       const status = get(rSchedule, 'status');
       const isSuccess = status === 'success';
       setAlert({
-        severity: status,
+        severity: isSuccess ? 'success' : 'error',
         message: isSuccess ? 'Schedule saved successfully!' : 'Unknown error occurred!',
       });
       setOpenAlert(true);
@@ -168,7 +168,7 @@ const App = ({ rSchedule }) => {
                     <Box m={1}>
                       <Typography
                         color="error"
-                        variant="p"
+                        variant="subtitle2"
                         classes={{
                           root: classes.errorMessage,
                         }}
