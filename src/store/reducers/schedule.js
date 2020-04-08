@@ -4,7 +4,7 @@ import {
   SAVE_SCHEDULE_FAIL,
 } from '@/store/actions/schedule';
 
-const initialState = {
+export const initialState = {
   schedule: {
     requesting: false,
     status: '',
@@ -13,7 +13,7 @@ const initialState = {
   },
 };
 
-export default function (state = initialState, action) {
+const scheduleReducer = (state = initialState, action) => {
   switch (action.type) {
     case SAVE_SCHEDULE_REQUEST: {
       return {
@@ -50,4 +50,6 @@ export default function (state = initialState, action) {
     default:
       return state;
   }
-}
+};
+
+export default scheduleReducer;

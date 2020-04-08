@@ -6,6 +6,7 @@ export function* saveSchedule(action) {
   try {
     const scheduleData = action.payload;
     yield call(ScheduleApi.saveSchedule, scheduleData);
+    //fake api delay
     delay(1000);
     yield put({
       type: SAVE_SCHEDULE_SUCCESS,
