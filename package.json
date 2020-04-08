@@ -31,7 +31,6 @@
     "build": "react-app-rewired build",
     "eject": "react-app-rewired eject",
     "test": "react-app-rewired test --env=jsdom",
-    "redux-devtools-extension": "^2.13.8",
     "lint": "lint ."
   },
   "eslintConfig": {
