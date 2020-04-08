@@ -6,7 +6,7 @@ import { SAVE_SCHEDULE_SUCCESS } from '@/store/actions/schedule';
 import { saveSchedule } from './schedule';
 
 describe('SHEDULE SAGAS', () => {
-  it('should dispatch action "SAVE_SCHEDULE_SUCCESS" with result from save scheduleAPI', () => {
+  it('should dispatch action "SAVE_SCHEDULE_SUCCESS" with result from save Schedule API', () => {
     const mockData = {
       name: 'username',
       schedules: [
